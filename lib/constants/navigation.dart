@@ -9,5 +9,5 @@ class NavigationConstrants {
   static const String NOTIFICATION_INFO = "notification-info-route";
 
   // Pages routes
-  static const String BottomBarWithFloatButton = "/BottomBarWithFloatButton";
+  static const String HomeScreen = "/homeScreen";
 }

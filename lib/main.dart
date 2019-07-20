@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:werewolfmoderator/environments/Env.dart';
 import 'package:werewolfmoderator/configs/routes.dart';
 import 'package:werewolfmoderator/configs/themes.dart';
 import 'package:werewolfmoderator/constants/navigation.dart';
@@ -8,6 +7,8 @@ import 'package:redux/redux.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:werewolfmoderator/store/state/app.state.dart';
 import 'package:werewolfmoderator/screen/HomeScreen.dart';
+import 'package:werewolfmoderator/screen/SplashScreen.dart';
+import 'package:werewolfmoderator/constants/navigation.dart';
 
 class MyApp extends StatelessWidget {
   final Store<AppState> store;
@@ -24,12 +25,13 @@ class MyApp extends StatelessWidget {
             return MaterialApp(
               title: 'Flutter Demo',
               theme: getThemeByType(Themes.light),
+              home: new SplashScreen(),
               routes: <String, WidgetBuilder>{
-                "/": (BuildContext context) => new MyHomePage(
+                NavigationConstrants.HomeScreen: (BuildContext context) =>
+                    new MyHomePage(
                       title: 'Giap Vo',
                     ),
               },
-              initialRoute: '/',
               debugShowCheckedModeBanner: false,
               onGenerateRoute: generateRoutes,
               //routes: routes,
